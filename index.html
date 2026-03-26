@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronaldo de Melo Oliveira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f3ff;
+            color: #1a1a2e;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-left span {
+            color: white;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        .header-domain {
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(124, 58, 237, 0.08);
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 800;
+        }
+
+        .profile-card h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-card .cnpj {
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+        .profile-card .cnpj strong { color: #1a1a2e; }
+
+        .mission-box {
+            text-align: left;
+            background: white;
+            border: 1px solid #ede9fe;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-box h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #7c3aed;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .mission-box p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+
+        .btn-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.9; }
+
+        .btn-outline {
+            background: white;
+            color: #7c3aed;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 2px solid #7c3aed;
+            transition: background 0.2s;
+        }
+        .btn-outline:hover { background: #f5f3ff; }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px rgba(124, 58, 237, 0.08);
+        }
+
+        .card h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #7c3aed;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+
+        .card strong { color: #1a1a2e; }
+
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .contact-item:last-of-type { border-bottom: none; }
+
+        .contact-label {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        .contact-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            text-align: right;
+        }
+
+        .btn-whatsapp {
+            display: block;
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            color: white;
+            padding: 0.9rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-top: 1.2rem;
+            transition: opacity 0.2s;
+        }
+        .btn-whatsapp:hover { opacity: 0.9; }
+
+        .social-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(124, 58, 237, 0.08);
+            margin-top: 1rem;
+        }
+
+        .social-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .social-card p {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.8rem;
+            color: #1a1a2e;
+        }
+
+        .privacy-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px rgba(124, 58, 237, 0.08);
+            margin-bottom: 1.5rem;
+        }
+
+        .privacy-card h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #7c3aed;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .privacy-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .privacy-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #374151;
+        }
+
+        .privacy-card ul {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 0.5rem;
+        }
+        .privacy-card ul li {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #374151;
+        }
+        .privacy-card ul li::before {
+            content: "- ";
+            color: #7c3aed;
+        }
+
+        footer {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 15px rgba(124, 58, 237, 0.08);
+            margin-bottom: 2rem;
+            font-size: 0.8rem;
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        footer strong { color: #1a1a2e; }
+
+        .footer-links {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f3f4f6;
+        }
+        .footer-links a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .profile-card h1 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <span>📋 Página pública</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <div class="profile-card">
+            <div class="profile-avatar">R</div>
+            <h1>RONALDO DE MELO OLIVEIRA</h1>
+            <p class="cnpj"><strong>CNPJ:</strong> 64.699.034/0001-XX</p>
+
+            <div class="mission-box">
+                <h2>NOSSA MISSÃO</h2>
+                <p>A missão da RONALDO DE MELO OLIVEIRA é desenvolver e executar estratégias eficientes, orientadas a resultados, que fortaleçam a presença de marcas, ampliem oportunidades de negócio e impulsionem o crescimento sustentável de nossos clientes.</p>
+                <p>Atuamos com foco em marketing direto, publicidade e consultoria estratégica, oferecendo soluções personalizadas, baseadas em análise, criatividade, ética e comprometimento. Nosso propósito é gerar valor real por meio de campanhas bem estruturadas, comunicação assertiva e gestão responsável, sempre alinhados às necessidades e objetivos de cada cliente.</p>
+            </div>
+
+            <div class="btn-row">
+                <a href="https://wa.me/5588933001071" class="btn-primary">CONVERSAR AGORA</a>
+                <a href="#" class="btn-outline">INSTAGRAM</a>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="card">
+                <h2>QUEM SOMOS?</h2>
+                <p>A RONALDO DE MELO OLIVEIRA, registrada sob o CNPJ 64.699.034/0001-XX, na cidade de JUAZEIRO DO NORTE, estado do CE. Somos uma empresa com natureza jurídica de Empresário Individual, atuando com foco em eficiência, organização e suporte empresarial.</p>
+                <p>Nossa atividade principal, conforme a Receita Federal, inclui Outras atividades de telecomunicações não especificadas anteriormente, que representa a base operacional de nossas atividades.</p>
+                <p>Localizada em RUA DOUTOR FRANCISCO MONTEIRO, 151 - CASA, PREFEITO CARLOS ALBERTO DA CRUZ, JUAZEIRO DO NORTE - CE, CEP 63041-010, atuamos com atendimento próximo, responsável e alinhado às necessidades de cada cliente.</p>
+                <p><strong>Nome Fantasia: RM OLIVEIRA</strong></p>
+                <p>Na RM OLIVEIRA, acreditamos que resultados consistentes são alcançados por meio de organização, eficiência e relações transparentes. Nosso compromisso é atuar como uma extensão confiável da estrutura de nossos clientes.</p>
+            </div>
+
+            <div>
+                <div class="card">
+                    <h2>CONTATO</h2>
+                    <div class="contact-item">
+                        <span class="contact-label">Telefone</span>
+                        <span class="contact-value">(88) 93300-1071</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">E-mail</span>
+                        <span class="contact-value">ronaldomelo@oliveira.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">WhatsApp</span>
+                        <span class="contact-value">(88) 93300-1071</span>
+                    </div>
+                    <a href="https://wa.me/5588933001071" class="btn-whatsapp">FALAR NO WHATSAPP</a>
+                </div>
+
+                <div class="social-card">
+                    <div class="social-icon">📸</div>
+                    <p>INSTAGRAM</p>
+                    <a href="#" class="btn-outline" style="display: inline-block; padding: 0.5rem 1.5rem; font-size: 0.85rem;">ACESSAR</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="privacy-card">
+            <h2>POLÍTICA DE PRIVACIDADE</h2>
+            <p>POLÍTICA DE PRIVACIDADE</p>
+            <br>
+            <p>RONALDO DE MELO OLIVEIRA<br>CNPJ: 64.699.034/0001-XX<br>Endereço: RUA DOUTOR FRANCISCO MONTEIRO, 151 - CASA, PREFEITO CARLOS ALBERTO DA CRUZ, JUAZEIRO DO NORTE - CE, CEP 63041-010</p>
+
+            <h3>1. Finalidade</h3>
+            <p>Esta Política de Privacidade descreve como a RONALDO DE MELO OLIVEIRA coleta, utiliza, armazena e protege dados pessoais de clientes, parceiros, fornecedores e usuários que interagem conosco por meio de nossos canais de comunicação ou durante a contratação e execução de nossos serviços.</p>
+
+            <h3>2. Dados Coletados</h3>
+            <p>Coletamos apenas os dados necessários para as finalidades descritas nesta política, incluindo:</p>
+            <ul>
+                <li>Nome, e-mail, telefone, dados profissionais e informações empresariais (CPF ou CNPJ), quando necessário;</li>
+                <li>Registros de comunicação, contratos, propostas e histórico de atendimento;</li>
+                <li>Dados de navegação (quando aplicável), conforme políticas das plataformas utilizadas.</li>
+            </ul>
+
+            <h3>3. Uso dos Dados</h3>
+            <p>Os dados pessoais coletados são utilizados para:</p>
+            <ul>
+                <li>Prestação e gestão dos serviços contratados;</li>
+                <li>Comunicação operacional, administrativa e contratual;</li>
+                <li>Cumprimento de obrigações legais e regulatórias;</li>
+                <li>Melhoria contínua dos serviços e processos internos.</li>
+            </ul>
+
+            <h3>4. Compartilhamento de Dados</h3>
+            <p>Não comercializamos dados pessoais. O compartilhamento ocorre apenas:</p>
+            <ul>
+                <li>Com parceiros essenciais à execução dos serviços, mediante confidencialidade;</li>
+                <li>Quando exigido por lei, ordem judicial ou autoridade competente.</li>
+            </ul>
+
+            <h3>5. Direitos do Titular (LGPD)</h3>
+            <p>Nos termos da LGPD (Lei nº 13.709/2018), o titular pode solicitar:</p>
+            <ul>
+                <li>Confirmação de tratamento, acesso, correção/atualização;</li>
+                <li>Anonimização, bloqueio ou eliminação de dados excessivos;</li>
+                <li>Portabilidade (quando aplicável) e revogação de consentimentos.</li>
+            </ul>
+
+            <h3>6. Armazenamento e Segurança</h3>
+            <p>Adotamos medidas técnicas e administrativas adequadas para proteger os dados pessoais contra acessos não autorizados, perdas ou divulgações indevidas.</p>
+
+            <h3>7. Alterações</h3>
+            <p>Esta política pode ser atualizada periodicamente.</p>
+
+            <h3>8. Contato</h3>
+            <p>📧 E-mail: ronaldomelo@oliveira.com<br>📞 Telefone: (88) 93300-1071</p>
+            <br>
+            <p><strong>RONALDO DE MELO OLIVEIRA</strong><br>CNPJ 64.699.034/0001-XX<br>© 2026 RONALDO DE MELO OLIVEIRA. Todos os direitos reservados.</p>
+        </div>
+
+        <footer>
+            <p>RONALDO DE MELO OLIVEIRA CNPJ: 64.699.034/0001-XX | Endereço: RUA DOUTOR FRANCISCO MONTEIRO, 151 - CASA, PREFEITO CARLOS ALBERTO DA CRUZ, JUAZEIRO DO NORTE - CE, CEP 63041-010 | Contato: 📧 ronaldomelo@oliveira.com 📞 (88) 93300-1071 | © 2026 RONALDO DE MELO OLIVEIRA. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Políticas de privacidade</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
